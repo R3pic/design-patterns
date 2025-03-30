@@ -1,6 +1,6 @@
 # 디자인 패턴 in Typescript
 
-> https://refactoring.guru/ 를 참고하여 학습하고 있습니다.
+> https://refactoring.guru 를 참고하여 학습하고 있습니다.
 
 이 레포지토리는 디자인 패턴들을 예제를 통해 학습한 내용이 정리되었습니다.
 
