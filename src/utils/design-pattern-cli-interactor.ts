@@ -13,9 +13,10 @@ export class DesignPatternCli {
     this.runners.forEach(this.printRunnerName);
 
     const input = await userInput("번호를 입력해주세요 : ");
-    const selectedIndex = parseInt(input, 10) - 1;
+    const selected = parseInt(input, 10);
+    const selectedIndex = selected - 1;
 
-    if (selectedIndex <= 0 || selectedIndex > this.runners.length - 1) throw new RangeError('잘못된 범위 입니다.');
+    if (selected < 1 || selected > this.runners.length) throw new RangeError('잘못된 범위 입니다.');
 
     const runner = this.runners.at(selectedIndex);
     if (!runner) throw new Error('디자인 패턴 실행 모듈이 존재하지 않습니다.');
