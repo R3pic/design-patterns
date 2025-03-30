@@ -1,3 +1,5 @@
+import chalk from 'chalk';
+
 export class Logger {
   private readonly contextName: string;
   constructor(context: Function) {
@@ -9,6 +11,8 @@ export class Logger {
   }
 
   log(msg: string) {
-    console.info(`[${this.contextName}] ${msg}`);
+    const prefix = chalk.blueBright(`[${this.contextName}]`);
+
+    console.info(`${prefix} ${msg}`);
   }
 }
