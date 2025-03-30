@@ -13,6 +13,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "chalk": "^5.4.1",
     "fast-glob": "^3.3.3"
   }
 }
