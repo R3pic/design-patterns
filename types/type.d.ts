@@ -5,5 +5,5 @@ interface DesignPatternRunnerBase {
 }
 
 interface RunnerModule {
-  default: ClassConstructor<DesignPatternRunner>;
+  default: ClassConstructor<ExampleRunner>;
 };

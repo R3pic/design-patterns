@@ -3,7 +3,8 @@ import { DesignPatternCli } from '@cli';
 
 async function main() {
   const loader = new ExampleRunnerLoader();
-  const cli = new DesignPatternCli(await loader.load());
+  const cli = await DesignPatternCli.create(loader);
+
   while (1) {
     try {
       cli.separator();

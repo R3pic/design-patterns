@@ -1,16 +1,27 @@
-import { glob } from 'fast-glob';
+import {type Entry, glob} from 'fast-glob';
 import { pathToFileURL } from 'url';
 import path from 'node:path';
 import { ExampleRunner } from 'src/example-runner/example-runner.ts';
 
 export class ExampleRunnerLoader {
-  load() {
-    const runnerPaths = glob.globSync('src/design-patterns/**/index.ts');
+  private runnerIndexFiles: Entry[] = [];
+
+  async load(): Promise<ExampleRunner[]> {
+    this.runnerIndexFiles = glob.globSync('src/design-patterns/**/index.ts', { objectMode: true, stats: true });
+
+    const runnerPaths = this.runnerIndexFiles.map((file) => file.path);
     const runners = runnerPaths.map(this.runnerPathToInstance);
+
     return Promise.all(runners);
   }
 
-  private async runnerPathToInstance(this: void, runnerPath: string) {
+  async getLastWrittenRunner() {
+    const compareDate = (a: Entry, b: Entry) => a.stats!.mtime.getTime() - b.stats!.mtime.getTime();
+    const file = this.runnerIndexFiles.toSorted(compareDate)[0];
+    return this.runnerPathToInstance(file.path);
+  }
+
+  private async runnerPathToInstance(this: void, runnerPath: string): Promise<ExampleRunner> {
     const modulePath = pathToFileURL(path.resolve(runnerPath)).href;
     const module: RunnerModule = await import(modulePath);
     const Runner = module.default;
