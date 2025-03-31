@@ -28,7 +28,7 @@
 
     "baseUrl": ".",
     "paths": {
-      "@cli/*": ["./src/cli/*"],
+      "@cli": ["./src/cli/index.ts"],
       "@example-runner": ["./src/example-runner/index.ts"],
       "@utils/*": ["./src/utils/*"],
       "@design-pattern/*": ["./src/design-patterns/*"],

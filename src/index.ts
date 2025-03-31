@@ -1,5 +1,5 @@
 import { ExampleRunnerLoader } from '@example-runner';
-import { DesignPatternCli } from '@cli/cli.ts';
+import { DesignPatternCli } from '@cli';
 
 async function main() {
   const loader = new ExampleRunnerLoader();
