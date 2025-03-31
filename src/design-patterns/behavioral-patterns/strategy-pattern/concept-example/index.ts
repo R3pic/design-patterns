@@ -1,10 +1,10 @@
-import {DesignPatternRunner} from '@utils/design-pattern-runner.ts';
+import { ExampleRunner } from '@example-runner';
 
 import {Context} from './context';
 import {ConcreteStrategyA} from './strategy-a';
 import {ConcreteStrategyB} from './strategy-b';
 
-export default class StrategyPatternConceptRunner extends DesignPatternRunner {
+export default class StrategyPatternConceptRunner extends ExampleRunner {
   run() {
     const context = new Context(new ConcreteStrategyA());
 

@@ -1,8 +1,12 @@
+import {ExampleRunner} from '@example-runner';
+
 import {Service} from './service.ts';
 
-import {DesignPatternRunner} from '@utils/design-pattern-runner.ts';
+export default class StrategyPatternAuthRunner extends ExampleRunner {
+  get name(): string {
+    return '전략패턴 인증 예제';
+  }
 
-export default class StrategyPatternAuthExample extends DesignPatternRunner {
   run() {
     const service = new Service("유저1");
 

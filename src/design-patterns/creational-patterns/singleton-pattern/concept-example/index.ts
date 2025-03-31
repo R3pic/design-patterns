@@ -1,9 +1,9 @@
 import {Singleton} from './singleton.ts';
 import {CommonObject} from './common-object.ts';
 
-import {DesignPatternRunner} from '@utils/design-pattern-runner.ts';
+import {ExampleRunner} from '@example-runner';
 
-export default class SingletonPatternConceptRunner extends DesignPatternRunner {
+export default class SingletonPatternConceptRunner extends ExampleRunner {
   run() {
     this.logger.log("=============싱글톤 사용=============");
     const instance1 = Singleton.instance;

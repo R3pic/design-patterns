@@ -1,9 +1,10 @@
 import chalk from 'chalk';
 
 export class Logger {
-  private readonly contextName: string;
-  constructor(context: Function) {
-    this.contextName = context.name;
+  private readonly prefix?: string;
+  constructor(context?: Function) {
+    if (context)
+      this.prefix = chalk.blueBright(`[${context.name}]`);
   }
 
   static create(context: Function) {
@@ -11,8 +12,7 @@ export class Logger {
   }
 
   log(msg: string) {
-    const prefix = chalk.blueBright(`[${this.contextName}]`);
-
-    console.info(`${prefix} ${msg}`);
+    if (!this.prefix) console.info(msg);
+    else console.info(`${this.prefix} ${msg}`);
   }
 }

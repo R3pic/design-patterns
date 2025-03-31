@@ -1,19 +1,17 @@
-import { DesignPatternLoader } from '@utils/design-pattern-loader.ts';
-import { DesignPatternCli } from '@utils/design-pattern-cli-interactor.ts';
+import { ExampleRunnerLoader } from '@example-runner';
+import { DesignPatternCli } from '@cli/cli.ts';
 
 async function main() {
-  const loader = new DesignPatternLoader();
+  const loader = new ExampleRunnerLoader();
   const cli = new DesignPatternCli(await loader.load());
   while (1) {
     try {
-      console.info('========================================');
+      cli.separator();
       const runner = await cli.select();
-
-      console.info(`${runner.constructor.name}을 실행중....`);
-      console.info('========================================');
+      cli.separator();
       runner.run();
     } catch (e) {
-     console.error(e);
+      if (e instanceof Error) console.error(e.message)
     }
   }
 }

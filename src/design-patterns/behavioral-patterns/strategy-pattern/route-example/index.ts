@@ -1,10 +1,10 @@
+import {ExampleRunner} from '@example-runner';
+
 import {Navigator} from './navigator.ts';
 import {WalkingStrategy} from './walking-strategy.ts';
 import {PublicTransportStrategy} from './public-transport-strategy.ts';
 
-import {DesignPatternRunner} from '@utils/design-pattern-runner.ts';
-
-export default class StrategyPatternRouteRunner extends DesignPatternRunner {
+export default class StrategyPatternRouteRunner extends ExampleRunner {
   run() {
     const navigator = new Navigator(new WalkingStrategy());
 

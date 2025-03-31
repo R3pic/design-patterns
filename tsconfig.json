@@ -28,9 +28,15 @@
 
     "baseUrl": ".",
     "paths": {
+      "@cli/*": ["./src/cli/*"],
+      "@example-runner": ["./src/example-runner/index.ts"],
       "@utils/*": ["./src/utils/*"],
       "@design-pattern/*": ["./src/design-patterns/*"],
-      "@strategy-pattern/*": ["./src/design-patterns/behavioral-patterns/strategy-pattern/*"]
-    }
-  }
+      "@strategy-pattern/*": ["./src/design-patterns/behavioral-patterns/strategy-pattern/*"],
+      "@singleton-pattern/*": ["./src/design-patterns/creational-patterns/singleton-pattern/*"]
+    },
+    "typeRoots": ["./types"],
+    "types": []
+  },
+  "include": ["./src", "./types"]
 }
