@@ -6,6 +6,8 @@ import StrategyPatternAuthRunner from '@strategy-pattern/auth-example';
 import StrategyPatternRouteRunner from '@strategy-pattern/route-example';
 import SingletonPatternConceptRunner from '@singleton-pattern/concept-example';
 import StrategyPatternPaymentRunner from '@strategy-pattern/payment-example';
+import SingletonPatternTypeScriptExportRunner from '@singleton-pattern/ts-export-example';
+import SingletonPatternGenericRunner from '@singleton-pattern/ts-generic-example';
 
 export class ExampleRunnerNameMapper {
   private static readonly map = new Map<ClassConstructor<ExampleRunner>, string>([
@@ -15,6 +17,8 @@ export class ExampleRunnerNameMapper {
     [StrategyPatternPaymentRunner, '전략 패턴 결제 예제'],
 
     [SingletonPatternConceptRunner, '싱글턴 패턴 컨셉트 예제'],
+    [SingletonPatternTypeScriptExportRunner, '싱글턴 패턴 타입스크립트 Export 예제'],
+    [SingletonPatternGenericRunner, '싱글턴 패턴 제네릭 구현 예제']
   ]);
 
   static getName(runner: ExampleRunner): string {
