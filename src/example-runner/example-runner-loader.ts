@@ -16,8 +16,9 @@ export class ExampleRunnerLoader {
   }
 
   async getLastWrittenRunner() {
-    const compareDate = (a: Entry, b: Entry) => a.stats!.mtime.getTime() - b.stats!.mtime.getTime();
-    const file = this.runnerIndexFiles.toSorted(compareDate)[0];
+    const compareDate = (a: Entry, b: Entry) => b.stats!.mtime.getTime() - a.stats!.mtime.getTime();
+    const sorted = this.runnerIndexFiles.toSorted(compareDate);
+    const file = sorted[0];
     return this.runnerPathToInstance(file.path);
   }
 
