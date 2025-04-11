@@ -4,6 +4,8 @@ import {CommonObject} from './common-object.ts';
 import {ExampleRunner} from '@example-runner';
 
 export default class SingletonPatternConceptRunner extends ExampleRunner {
+  static name = '싱글턴 패턴 컨셉트 예제';
+
   run() {
     this.logger.log("=============싱글톤 사용=============");
     const instance1 = Singleton.instance;
@@ -14,6 +16,12 @@ export default class SingletonPatternConceptRunner extends ExampleRunner {
     const instance3 = new CommonObject();
     const instance4 = new CommonObject();
     this.compare(instance3, instance4);
+
+    // 리플렉션 사용시 싱글턴이 깨질 수 있음
+    // const instance5 = Reflect.construct(Singleton, []);
+    // console.info(instance5);
+    // const instance6 = Reflect.construct(Singleton, []);
+    // console.info(instance6);
   }
 
   private compare(a: unknown, b: unknown) {

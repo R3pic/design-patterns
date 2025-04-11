@@ -4,6 +4,8 @@ import {BService} from '@singleton-pattern/ts-generic-example/b.service.ts';
 import {CService} from '@singleton-pattern/ts-generic-example/c.service.ts';
 
 export default class SingletonPatternGenericRunner extends ExampleRunner {
+  static name = '싱글턴 패턴 제네릭 구현 예제';
+
   run() {
     this.logger.log('Singleton 클래스를 상속받은 AService를 테스트합니다.');
     const aService1 = AService.getInstance();

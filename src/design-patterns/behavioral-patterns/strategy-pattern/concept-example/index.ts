@@ -5,6 +5,7 @@ import {ConcreteStrategyA} from './strategy-a';
 import {ConcreteStrategyB} from './strategy-b';
 
 export default class StrategyPatternConceptRunner extends ExampleRunner {
+  static name = '전략 패턴 컨셉트 예제';
   run() {
     const context = new Context(new ConcreteStrategyA());
 

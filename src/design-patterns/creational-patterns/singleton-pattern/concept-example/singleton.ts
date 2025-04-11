@@ -2,7 +2,7 @@ import { Logger } from '@utils/logger.ts';
 
 export class Singleton {
   private readonly logger = new Logger(Singleton);
-  static #instance: Singleton | undefined;
+  static #instance: Singleton;
 
   private constructor() {
     this.logger.log("싱글톤 객체가 생성되었습니다.");

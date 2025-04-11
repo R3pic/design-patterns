@@ -10,6 +10,7 @@ import {CreditCard} from '@strategy-pattern/payment-example/creditcard.payable.t
 import {KakaoPay} from '@strategy-pattern/payment-example/kakaopay.payable.ts';
 
 export default class StrategyPatternPaymentRunner extends ExampleRunner {
+  static name = '전략 패턴 결제 예제';
   run(): void {
     const customers = ['홍길동', '강감찬', '이순신'];
 

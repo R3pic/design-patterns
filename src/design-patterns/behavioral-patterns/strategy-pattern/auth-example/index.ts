@@ -3,6 +3,7 @@ import {ExampleRunner} from '@example-runner';
 import {Service} from './service.ts';
 
 export default class StrategyPatternAuthRunner extends ExampleRunner {
+  static name = '전략 패턴 인증 예제';
   run() {
     const service = new Service("유저1");
 

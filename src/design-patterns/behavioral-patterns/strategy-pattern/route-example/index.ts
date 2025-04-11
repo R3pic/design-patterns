@@ -5,6 +5,7 @@ import {WalkingStrategy} from './walking-strategy.ts';
 import {PublicTransportStrategy} from './public-transport-strategy.ts';
 
 export default class StrategyPatternRouteRunner extends ExampleRunner {
+  static name = '전략 패턴 경로 예제';
   run() {
     const navigator = new Navigator(new WalkingStrategy());
 
