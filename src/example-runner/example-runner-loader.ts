@@ -10,9 +10,11 @@ export class ExampleRunnerLoader {
     this.runnerIndexFiles = glob.globSync('src/design-patterns/**/index.ts', { objectMode: true, stats: true });
 
     const runnerPaths = this.runnerIndexFiles.map((file) => file.path);
-    const runners = runnerPaths.map(this.runnerPathToInstance);
+    const runnersPromises = runnerPaths.map(this.runnerPathToInstance);
 
-    return Promise.all(runners);
+    const runners = await Promise.all(runnersPromises);
+
+    return runners.sort((a, b) => a.constructor.name.localeCompare(b.constructor.name));
   }
 
   async getLastWrittenRunner() {

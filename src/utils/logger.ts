@@ -15,4 +15,14 @@ export class Logger {
     if (!this.prefix) console.info(msg);
     else console.info(`${this.prefix} ${msg}`);
   }
+
+  warn(msg: string) {
+    if (!this.prefix) console.warn(msg);
+    else console.warn(`${this.prefix} ${msg}`);
+  }
+
+  error(msg: string) {
+    if (!this.prefix) console.error(msg);
+    else console.error(`${this.prefix} ${msg}`);
+  }
 }
